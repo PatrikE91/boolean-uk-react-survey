@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AnswersItem from "./AnswersItem";
+import AnswersList from "./AnswersList";
 
 function Main() {
   const [open, setOpen] = useState(false); //Ignore this state
@@ -10,13 +12,16 @@ function Main() {
     name: "",
     email: "",
   });
-
+  const [answersList, setAnswerList] = useState([])
+   
   const submitForm = (event) => {
     event.preventDefault();
-    
+    setAnswerList([state])
     event.target.reset()
     setState({...state, name: '', email: '', thoughtsAboutTheDuck: ''})
-    console.log(state)
+    console.log("answer",answersList)
+    console.log("stae",state)
+
   };
 
   // const handleChange = (event) => {
@@ -31,7 +36,7 @@ function Main() {
     <main className="main">
       <section className={`main__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <AnswersList answersList={answersList}/>
       </section>
       <section className="main__form">
         <form className="form" onSubmit={(e)=> {
