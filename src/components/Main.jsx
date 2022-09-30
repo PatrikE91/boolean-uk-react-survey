@@ -16,12 +16,13 @@ function Main() {
    
   const submitForm = (event) => {
     event.preventDefault();
-    setAnswerList([state])
+    answersList.push(state)
+    setAnswerList(answersList)
+
     event.target.reset()
     setState({...state, name: '', email: '', thoughtsAboutTheDuck: ''})
-    console.log("answer",answersList)
-    console.log("stae",state)
-
+    // console.log("answer",answersList)
+    // console.log("stae",state)
   };
 
   // const handleChange = (event) => {
